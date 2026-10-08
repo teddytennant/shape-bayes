@@ -26,4 +26,6 @@ pip install -e .
 JAX_PLATFORMS=cpu python -m pytest -q
 ```
 
+H200 smoke is `train.sbatch` plus `smoke_gpu.py`: 20 Adam steps of the shape posterior loss on a synthetic batch. Job 759286 on compute-gpu-01, jax 0.11.1 CudaDevice(id=0), loss -0.199159 to -0.322757, exit 0.
+
 What does not match a full experiment: no 300W, COFW, or WFLW images, and no base landmark detector. Callers pass S' and sigma'. The transformer is a minimal stand-in for E_phi, not the unpublished architecture. There are no NME numbers. The in-distribution Mahalanobis check is not included. Precision uses 1/(sigma^2+eps).
